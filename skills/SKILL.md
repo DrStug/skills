@@ -1,33 +1,36 @@
-name: local-programming-models-pack
-description: Specialized skills for code generation across multiple programming languages using local LLMs
+name: Local Programming Models
+description: Flexible programming skills using multiple local LLMs. Routes based on task and chosen model.
 version: 1.0
-type: skill-pack
-status: published
-tags: [coding, programming, software-development, debugging, python, javascript, rust, go]
-models:
-  - qwen3-coder:30b
-  - qwen2.5-coder-14b
-  - deepseek-r1:latest
-  - qwen3.6:35b
-  - mistral-7b-instruct-v0.3
-  - gemma4:e4b
+type: skill
+tags: [programming, coding, software-engineering, debugging]
 ---
 
-# Local Programming Models Pack
+# Local Programming Models Skill
 
-**Purpose**: Enable high-quality code generation, refactoring, debugging, and architecture tasks using locally hosted models.
+**This skill provides access to multiple local coding models.**
 
-**Best Used For**:
-- Writing new code
-- Debugging existing code
-- Code review and refactoring
-- Learning new languages/frameworks
+## Available Models
 
-**Routing Logic**:
-- Default → `qwen3-coder:30b`
-- Algorithmic / Complex logic → `deepseek-r1:latest`
-- Fast prototyping → `gemma4:e4b` or `mistral-7b-instruct-v0.3`
-
-**Supported Languages**: Python, JavaScript, TypeScript, Java, C++, Rust, Go, SQL, Bash, and more.
+| Model                        | Strength                              | Best For                          |
+|-----------------------------|---------------------------------------|-----------------------------------|
+| qwen3-coder:30b             | Excellent code quality                | Complex projects, refactoring     |
+| qwen2.5-coder-14b           | Strong modern coding                  | Web dev, TypeScript, daily tasks  |
+| deepseek-r1:latest          | Strong reasoning & algorithms         | Algorithms, math-heavy code       |
+| qwen3.6:35b                 | Good general coding                   | Large context tasks               |
+| mistral-7b-instruct-v0.3    | Creative & fast scripting             | Scripts, creative coding          |
+| gemma4:e4b / gemma-4-e4b    | Very fast                             | Quick prototypes & small scripts  |
+| qwen3.5-9b                  | Balanced                              | General use                       |
+| deepseek-r1:1.5b            | Ultra fast                            | Simple tasks                      |
 
 ---
+
+## Instructions for Use
+
+- **Do not default** to one model.
+- **Ask the user** which model to use if not specified.
+- **Analyze the task** and suggest the best model when appropriate.
+- Support all major programming languages: Python, JavaScript, TypeScript, Java, C++, Rust, Go, SQL, Bash, HTML/CSS, etc.
+
+**When the user specifies a model** (e.g. "use qwen3-coder:30b"), always respect and use that model.
+
+**When no model is specified**, recommend the most suitable one based on the task and explain why.
